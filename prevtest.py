@@ -40,13 +40,15 @@ def clean():
         pass
 
 
-def compile_test(phase, test):
-    os.makedirs("test_results/" + phase, exist_ok=True)
+def compile_test(phase_dir, test):
+    os.makedirs("test_results/" + phase_dir, exist_ok=True)
 
-    if not os.path.isfile("test_results/%s/%s.xsl" % (phase, phase)):
+    phase = phase_dir.split('.')[0]
+
+    if not os.path.isfile("test_results/%s/%s.xsl" % (phase_dir, phase_dir)):
         shutil.copy(
             "%s/data/%s.xsl" % (PREV_HOME, phase),
-            "test_results/%s/%s.xsl" % (phase, phase)
+            "test_results/%s/%s.xsl" % (phase_dir, phase_dir)
         )
 
     os.chdir(BUILD_DIR)
@@ -57,11 +59,11 @@ def compile_test(phase, test):
     output = subprocess.check_output([
         "java",
         "compiler.Main",
-        "--xml=../%s/%s/%s.xml" % ("test_results", phase, test),
+        "--xml=../%s/%s/%s.xml" % ("test_results", phase_dir, test),
         "--xsl=./",
         "--target-phase=%s" % phase,
         "--logged-phase=%s" % phase,
-        "../%s/%s/%s.prev" % ("test_programs", phase, test)
+        "../%s/%s/%s.prev" % ("test_programs", phase_dir, test)
     ], stderr=subprocess.STDOUT)
 
     if args.verbose:
