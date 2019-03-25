@@ -1,0 +1,12 @@
+
+typ myType: int;
+var variable1: int;
+
+# reference error: "outerType" is not defined
+fun main(variable1: myType): outerType = {
+  none; : none
+  where
+    typ outerType: int;
+    typ myType: arr [10] int;
+    var variable1: char;
+};

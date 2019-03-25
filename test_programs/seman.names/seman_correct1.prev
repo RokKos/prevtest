@@ -1,5 +1,5 @@
-{
-    none : strcmp(a, b)
+fun a(): void = {
+    none; : strcmp(a, b)
 
     where
 
@@ -11,17 +11,17 @@
         fun strcmp(s1: string, s2: string): int = {
             same = true;
             if i < 256 then
-                same = false + s2
-            end
+                same = false + s2;
+            end;
 
             : same
 
             where
                 var i: int;
-                var same: bool
+                var same: bool;
 
         };
 
         fun fff(): int = ggg() + s2;
-        fun ggg(): int = fff()
-}
+        fun ggg(): int = fff();
+};

@@ -1,0 +1,5 @@
+
+typ myType: int;
+
+# symbol "myType" already defined
+fun myType(): void = none;

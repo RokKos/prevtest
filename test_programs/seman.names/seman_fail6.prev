@@ -1,7 +1,6 @@
-# Should this fail? Are we already supposed to check parameter types?
-{
-    0
+fun wrapper(): int = {
+    0;
     : 0
     where
-        fun test(a: integer): int = a # Parameter type name 'integer' not defined...
+        fun test(a: unknownParamType): int = a; # Parameter type name 'integer' not defined...
 }
