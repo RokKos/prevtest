@@ -1,6 +1,6 @@
-{
-    0
+fun a(): int = {
+    0;
     : 0
     where
-        var a: integer # type 'integer' is undefined
-}
+        var a: integer; # type 'integer' is undefined
+};

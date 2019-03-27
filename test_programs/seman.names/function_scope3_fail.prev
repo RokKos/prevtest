@@ -1,0 +1,12 @@
+
+typ outerType: int;
+typ myType: int;
+var variable1: int;
+
+# symbol "variable1" already defined
+fun main(variable1: myType, variable1: myType): outerType = {
+  none; : none
+  where
+    typ myType: arr [10] int;
+    var variable1: char;
+};
