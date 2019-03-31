@@ -1,0 +1,9 @@
+fun wrapper(): void = {
+  
+  $a = $b;
+  
+  : none
+  where
+    var a: int;
+    var b: int;
+};
