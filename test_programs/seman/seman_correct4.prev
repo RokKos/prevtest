@@ -1,11 +1,5 @@
-{
-    none : a[0] + i
+var a: arr[100] int;
 
-    where
+typ t1: int;
 
-        var a: arr[100] int;
-
-        typ t1: int;
-
-        var i: t1
-}
+var i: t1;

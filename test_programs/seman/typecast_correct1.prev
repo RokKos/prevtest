@@ -1,25 +1,22 @@
-{
-	[void] (
-		[int] 1 	+
-		[int] 'A' 	+
-		[int] true	+
-		[int] false
-	);
+fun wrapper(): int = {
+  
+	(1 : int) +
+	('A' : int);
 
-	a_int = [ptr int] voidptr;
-	a_char = [ptr char] voidptr;
-	a_bool = [ptr bool] voidptr;
-	record = [ptr rec(a: int)] voidptr;
-	array = [ptr arr[5] int] voidptr
+  a_int = (voidptr : ptr int);
+  a_char = (voidptr : ptr char);
+  a_bool = (voidptr : ptr bool);
+  record = (voidptr : ptr rec(a: int));
+  array = (voidptr : ptr arr[5] int);
 
-	: 1
+  : 1
 
-	where
-		var a_int: ptr int;
-		var a_char: ptr char;
-		var a_bool: ptr bool;
-		var record: ptr rec(a: int);
-		var array: ptr arr[5] int;
+  where
+    var a_int: ptr int;
+    var a_char: ptr char;
+    var a_bool: ptr bool;
+    var record: ptr rec(a: int);
+    var array: ptr arr[5] int;
 
-		var voidptr: ptr void
-}
+    var voidptr: ptr void;
+};
