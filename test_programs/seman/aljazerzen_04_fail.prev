@@ -1,0 +1,2 @@
+typ myRecord: rec(comp: myVoid);
+typ myVoid: void;

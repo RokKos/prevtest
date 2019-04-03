@@ -1,5 +1,5 @@
 
-typ arr1: arr [123 * 444 + + 4124 - -4124 * 5%2144 /123] int;
+typ arr1: arr [123] int;
 
 var a: int;
 
