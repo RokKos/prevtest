@@ -1,9 +1,9 @@
-{
+fun wrapper(): int = {
     instance.a = 3;
-    instance.b = new arr [256 * 2 - 256] char;
-    instance.c = new string;
+    instance.b = new (arr [256] char);
+    instance.c = new (string);
 
-    c = [int] true
+    c = ('c': int);
 
     : strcmp(instance.b, instance.c)
 
@@ -21,17 +21,17 @@
         fun strcmp(s1: ptr string, s2: ptr string): int = {
             same = true;
             if i < 256 then
-                same = false
-            end
+                same = false;
+            end;
 
             : i
 
             where
                 var i: int;
-                var same: bool
+                var same: bool;
 
         };
 
-        fun fff(): int = ggg() + 4;
-        fun ggg(): int = fff() + 2
-}
+        fun fff(): char = (ggg() + 4 : char);
+        fun ggg(): int = (fff() : int) + 2;
+};

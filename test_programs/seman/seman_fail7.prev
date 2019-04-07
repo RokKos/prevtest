@@ -1,11 +1,5 @@
-{
-
-    none : 1
-
-    where
-
-        typ a: b;
-        typ b: c;
-        typ c: d;
-        typ d: rec(comp: a)
-}
+# fail cyclic declarations
+typ a: b;
+typ b: c;
+typ c: d;
+typ d: rec(comp: a);

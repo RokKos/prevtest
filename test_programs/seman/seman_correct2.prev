@@ -1,23 +1,23 @@
-{
-    none : f(1,2,3,i) + 5
+fun wrapper(): int = {
+    none; : f(1,2,3,i) + 5
 
     where
 
         fun f(a: a, b: b, c: c, d: d): int = {
 
-            a = c + b + d
+            a = c + b + d;
             
             : (a + i + f() + g())
 
             where
-                #typ a: int; # to more crashat z location v 7.13
+                #typ a: int; # to more crashat z location v 8.13
                 var i: int;
                 fun f(): int = {
-                    none : 6
+                    none; : 6
 
                     where
-                        fun f(): int
-                }
+                        fun f(): int;
+                };
         };
 
         typ a: int;
@@ -34,7 +34,7 @@
         # ???
         # does not fail: function not used
 
-        fun declaration(): bool 
+        fun declaration(): bool;
 
         # ???
-}
+};

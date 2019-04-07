@@ -1,7 +1,2 @@
-{
-    none : 1
-
-    where
-
-        typ a: ptr a
-}
+typ myArray: arr[5] myVoid;
+typ myVoid: void;

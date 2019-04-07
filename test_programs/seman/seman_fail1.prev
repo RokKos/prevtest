@@ -1,5 +1,5 @@
-{
-    none : f()
+fun wrapper(): int = {
+    none; : f()
 
     where
 
@@ -12,5 +12,5 @@
         typ y: x; # fail: circular typedef
 
         fun f(): int = g();
-        fun g(): int = f()
-}
+        fun g(): int = f();
+};
