@@ -1,13 +1,13 @@
 # new/del, pointers
 
-{
+fun wrapper(): int = {
     # init
     n = 10;
     i = 0;
     while i < n do
-        args[i] = [ptr string] null;
-        i = i + 1
-    end
+        args[i] = (null: ptr string);
+        i = i + 1;
+    end;
 
     : count_args($args, n)
 
@@ -24,18 +24,18 @@
         count = 0;
         while count < n do
             count = count + 1;
-            (@x)[count] = new string;
-            del (@x)[count]
+            (@x)[count] = new (string);
+            del ((@x)[count]);
         end;
 
         if count == 0 then 
             # empty array
-            [void] 'l'; [void] 'u'; [void] 'l'
-        end
+            'l'; 'u'; 'l';
+        end;
 
         : count
 
         where
-        var count: int
-    }
-}
+        var count: int;
+    };
+};
