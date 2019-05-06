@@ -1,0 +1,52 @@
+# var i:int;
+# fun f1():ptr char = "one";
+# fun f2():int = 1;
+
+fun putInt(i: int): void;
+fun putChar(c: char): void;
+fun putString(s: ptr char): void;
+
+fun main(): void = {
+  f();
+  : none
+};
+
+fun f(): void = {
+    var_f = 42;
+    g2();
+    : g1(4)
+  where
+    var var_f: int;
+
+    fun g1(n : int): void = {
+      h();
+      if n != 0 then
+        g1(n-1);
+      else
+        putInt(var_f); putChar('\n');
+      end;
+      : none
+
+      where
+        fun h(): void = {
+          putInt(n); putChar('\n'); : none
+        };
+    };
+
+    fun g2(): void = {
+      g1(3); : none
+    };
+};
+
+# should output
+# 3
+# 2
+# 1
+# 0
+# 42
+# 4
+# 3
+# 2
+# 1
+# 0
+# 42
