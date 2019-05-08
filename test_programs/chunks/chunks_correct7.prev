@@ -1,0 +1,31 @@
+# var i:int;
+# fun f1():ptr char = "one";
+# fun f2():int = 1;
+
+fun putInt(i: int): void;
+fun putChar(c: char): void;
+fun putString(s: ptr char): void;
+
+fun main(): void = {
+  hello(5, 4);
+  : none
+};
+
+fun hello(a: int, b: int): int = {
+  if a == 5 then
+    putString("welcome message: ");
+  end;
+  if b == 6 then
+    putString("hello!\n");
+  else
+    putString("hello\nthere!\n");
+  end;
+  while b < 7 do
+    putString("b too small\n");
+    b = b + 1;
+  end;
+  loc1.comp1 = 4;
+  : loc1.comp1
+  where
+    var loc1: rec(comp2: int, comp1: int);
+};

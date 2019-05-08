@@ -23,8 +23,8 @@ PREV_HOME = os.path.abspath("../prev")
 TEST_HOME = os.path.abspath(os.curdir)
 BUILD_DIR = TEST_HOME + "/out"
 SRCS = PREV_HOME + "/srcs"
-OK_MSG = ":-) This is PREV compiler:" + os.linesep + ":-) Done." + os.linesep
-OK_MSG_INTERPRETER = ":-) This is PREV compiler:" + os.linesep + "1" + os.linesep + ":-) Done." + os.linesep
+OK_MSG_BEGIN = ":-) This is PREV compiler:" + os.linesep
+OK_MSG_END = ":-) Done." + os.linesep
 
 xmltree = XmlTree()
 
@@ -97,7 +97,7 @@ def print_test_result(test, color, message, indent=0, note=""):
 
 def run_test(phase, test, indent=0):
     output = compile_test(phase, test).decode("unicode_escape")
-    compile_ok = output == OK_MSG or output == OK_MSG_INTERPRETER
+    compile_ok = OK_MSG_BEGIN in output and OK_MSG_END in output
     fail_test = test_should_fail(test)
 
     if compile_ok and fail_test:
@@ -208,7 +208,7 @@ if args.updatetests:
     update_tests(args.phase)
 
 if args.phase == "all":
-    for phase in ["lexan", "abstr", "seman", "frames", "imcgen"]:
+    for phase in ["lexan", "abstr", "seman", "frames", "chunks"]:
         test_phase(phase)
 else:
     test_phase(args.phase, args.filter)

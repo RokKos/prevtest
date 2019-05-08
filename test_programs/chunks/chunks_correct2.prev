@@ -1,0 +1,16 @@
+fun main(): int = { 
+    i = 3; : f(i)
+    where
+        var i: int;
+        fun f(a: int): int = {
+            g();
+            if a > 0 then f(a-1); end;
+            h();
+            
+            : 0
+            
+            where
+                fun g(): int = 1;
+                fun h(): int = g();
+        };
+};
