@@ -88,7 +88,7 @@ def check_test(phase, test):
 
 
 def test_should_fail(test):
-    return "fail" in test.lower() or "incorrect" in test.lower()
+    return "fail" in test.lower() or "incorrect" in test.lower() or "err" in test.lower()
 
 
 def print_test_result(test, color, message, indent=0, note=""):
@@ -116,7 +116,7 @@ def run_test(phase, test, indent=0):
             print_test_result(test, Fore.GREEN, "COMPILED OK, BUT NO RESULT FILE", indent)
             return
         elif not correct_xml:
-            print_test_result(test, Fore.RED, "WRONG XML", indent)
+            print_test_result(test, Fore.YELLOW, "WRONG XML", indent)
             return
 
     # Every check passed

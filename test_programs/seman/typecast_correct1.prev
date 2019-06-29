@@ -1,13 +1,13 @@
 fun wrapper(): int = {
-  
+
 	(1 : int) +
 	('A' : int);
 
-  a_int = (voidptr : ptr int);
-  a_char = (voidptr : ptr char);
-  a_bool = (voidptr : ptr bool);
-  record = (voidptr : ptr rec(a: int));
-  array = (voidptr : ptr arr[5] int);
+  a_int = (charptr : ptr int);
+  a_char = (charptr : ptr char);
+  a_bool = (charptr : ptr bool);
+  record = (charptr : ptr rec(a: int));
+  array = (charptr : ptr arr[5] int);
 
   : 1
 
@@ -18,5 +18,5 @@ fun wrapper(): int = {
     var record: ptr rec(a: int);
     var array: ptr arr[5] int;
 
-    var voidptr: ptr void;
+    var charptr: ptr char;
 };
